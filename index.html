@@ -335,7 +335,7 @@
       </div>
     </div>
     <footer>
-      Developed by Sil
+      Developed by Sil and eewee
     </footer>
 
     <script>
@@ -468,9 +468,7 @@
         });
       }
 
-      function drawGame(hangman) {
-        drawResult(hangman.getNumberOfFaults());
-        drawHangman(hangman.getNumberOfFaults());
+      function drawGame(hangman) { drawResult(hangman.getNumberOfFaults());drawHangman(hangman.getNumberOfFaults());
         drawCharList(hangman.getCharList());
         drawKeyboard(hangman.getFoundLetters(), hangman.getFaultyLetters());
       }
@@ -544,37 +542,20 @@
 
           this.pickedLetters.push(letter);
 
-          if (contains) {
-            console.log('Yeah, you are great!');
-          } else {
+          if (contains) { console.log('Yeah, you are great!'); /* h e l l o*/
+        } else {
             console.log('Oh no, try it again');
             this.pickedLetters.push(letter);
-            this.faults += 1;
-          }
+            this.faults += 1;  }
 
-          if (this.isFinished()) {
-            this.onEndGame();
-          }
-        }
+          if (this.isFinished()) { this.onEndGame(); } }
 
-        hasWon() {
-          const letters = this.getLettersOfWord();
-          return (
-            !this.hasLost() &&
-            letters.every(char => {
-              return this.pickedLetters.includes(char);
-            })
-          );
-        }
+        hasWon() { const letters = this.getLettersOfWord(); return ( !this.hasLost() &&  letters.every(char => { return this.pickedLetters.includes(char); })); }
 
-        hasLost() {
-          return this.faults >= MAX_FAULTS;
-        }
+        hasLost() { return this.faults >= MAX_FAULTS; }
 
-        isFinished() {
-          return this.hasLost() || this.hasWon();
-        }
-      }
+
+        isFinished() { return this.hasLost() || this.hasWon(); }}
 
       game = initNewGame();
       listenForInputs(letter => {
