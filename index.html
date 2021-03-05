@@ -1,119 +1,585 @@
-<!DOCTYPE html>
-<html>
-<head>
- <script async src="https://arc.io/widget.min.js#MYbk4Hz3"></script>
-  <meta charset="UTF-8" />
- <meta property="og:title" content="Personal Website">
-<meta property="og:description" content="Coming Soon!">
-<meta property="og:image" content="https://cdn.discordapp.com/attachments/739308495878488065/791902188569100288/unknown.png">
-     <meta name="theme-color" content="#DAA520" />
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="https://cdn.discordapp.com/attachments/804330651389263913/804890214564102164/giphy_1.gif">
-  <title>Coming Soon</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <link href='https://fonts.googleapis.com/css?family=Roboto|Raleway' rel='stylesheet' type='text/css'>
-  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script async src="https://arc.io/widget.min.js#MYbk4Hz3"></script>
+    <meta charset="utf-8" />
+    <title>Sil is trash</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Broken Hangman game" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        padding: 16px;
+        font-family: 'Arial Black', sans-serif;
+        font-size: 100%;
+      }
 
+      header {
+        text-align: center;
+      }
 
-</head>
-<body>
+      h1 {
+        display: inline-block;
+        position: relative;
+        margin: 0 0 2rem 0;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: default;
+        user-select: none;
+        transition: all 180ms ease;
+      }
 
-<div class="wrapper">
-  <div id="particles-js"></div>
-  <div class="section">
-    <div class="name">
-      <ul id="scene"
-      data-calibrate-x="false"
-      data-calibrate-y="false"
-      data-invert-x="true"
-      data-invert-y="true"
-      data-limit-x="false"
-      data-limit-y="false"
-      data-scalar-x="2"
-      data-scalar-y="2"
-      data-friction-x="0.1"
-      data-friction-y="0.1"
-      data-origin-x="0.0"
-      data-origin-y="0.0">
-      <p class="head layer" data-depth="1.0">Coming Soon!</p>
-    </ul>
+      h1:hover {
+        color: rgb(0, 62, 230);
+        letter-spacing: 4px;
+        transform: scale(1.1) rotate(-4deg);
+      }
 
-      <ul id="scene1"
-      data-calibrate-x="false"
-      data-calibrate-y="false"
-      data-invert-x="false"
-      data-invert-y="true"
-      data-limit-x="false"
-      data-limit-y="false"
-      data-scalar-x="2"
-      data-scalar-y="2"
-      data-friction-x="0.1"
-      data-friction-y="0.1"
-      data-origin-x="0.0"
-      data-origin-y="0.0">
-      <p id="textdisp" class="text layer" data-depth="0.5"></p>
-      </ul>
-      <ul id="scene2"
-      data-calibrate-x="false"
-      data-calibrate-y="false"
-      data-invert-x="false"
-      data-invert-y="true"
-      data-limit-x="false"
-      data-limit-y="false"
-      data-scalar-x="2"
-      data-scalar-y="2"
-      data-friction-x="0.1"
-      data-friction-y="0.1"
-      data-origin-x="0.0"
-      data-origin-y="0.0">
-      <div class="icons layer" data-depth="0.6">
-        <div class="ico"><a target="_blank" href="https://github.com/phineapuuu" title="My Github Profile"><i class="fa fa-github fa-2x git"></i></a></div>
-        <div class="ico"><a target="_blank" href="https://discord.gg/e6gcWKnnuS" title="My Discord Community"><i class="fa fa-medium fa-2x medium"></i></a></div>       
-        <div class="ico"><a target="_blank" href="mailto:rickyturtles.dev@gmail.com" title="Email me"><i class="fa fa-envelope fa-2x mail"></i></a></div>
-     
-        
+      h1:before {
+        height: 4px;
+        content: ' ';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 100%;
+        right: 0;
+        transition: all 180ms ease;
+      }
+
+      h1:hover:before {
+        left: 0;
+        background: rgb(0, 62, 230);
+      }
+
+      footer {
+        margin: 5rem 0 3rem;
+        font-family: Arial, Arial, Helvetica, sans-serif;
+        color: gray;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      footer a {
+        color: rgb(0, 62, 230);
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+
+    <style>
+      .chars {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 3rem 1rem;
+      }
+
+      .chars__char {
+        width: 2.6rem;
+        height: 3rem;
+        flex-shrink: 0;
+        display: block;
+        margin: 0 0.5rem 0.5rem 0;
+        padding: 0.25rem;
+        border: 0 solid rgb(0, 62, 230);
+        border-bottom-width: 3px;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      .chars__char--is-letter {
+        border-width: 2px 2px 4px 2px;
+      }
+    </style>
+
+    <style>
+      .keyboard {
+        width: 100%;
+        max-width: 30rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+
+      .keyboard__key {
+        width: 3rem;
+        margin: 0 0.5rem 0.5rem 0;
+        padding: 0.5rem 0;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+        background-color: rgba(0, 62, 230, 0.07);
+        color: rgb(0, 62, 230);
+        font: inherit;
+        font-size: 1.3rem;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .keyboard__key--found {
+        background-color: rgba(102, 226, 213, 0.07);
+        color: rgb(102, 226, 213);
+        cursor: default;
+      }
+
+      .keyboard__key--is-faulty {
+        background-color: rgba(254, 0, 0, 0.07);
+        color: rgb(254, 0, 0);
+        cursor: default;
+      }
+    </style>
+
+    <style>
+      .drawing {
+        max-width: 80rem;
+        margin: 0 auto;
+        border: 3px solid rgb(0, 62, 230);
+        box-shadow: 5px 5px 0 1px rgb(0, 47, 179);
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .drawing__container {
+        width: 20rem;
+        max-width: 100%;
+        height: 18rem;
+        display: inline-block;
+        position: relative;
+        border-bottom: 3px solid black;
+      }
+
+      .drawing__message {
+        margin-top: 1.5rem;
+        font-size: 1.3rem;
+        text-align: center;
+      }
+
+      .drawing__part {
+        position: absolute;
+      }
+
+      .drawing__part-1 {
+        width: 3px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        background-color: black;
+      }
+
+      .drawing__part-2 {
+        height: 3px;
+        top: 0;
+        right: 50%;
+        left: 0;
+        background-color: black;
+      }
+
+      .drawing__part-3 {
+        width: 3px;
+        height: 15%;
+        top: 0;
+        left: 50%;
+        background-color: black;
+      }
+
+      .drawing__part-4 {
+        width: 2.5rem;
+        height: 2.5rem;
+        top: 15%;
+        left: calc(50% - 1.25rem + 1.5px);
+        border-radius: 100%;
+        border: 3px solid black;
+      }
+
+      .drawing__part-5 {
+        width: 3px;
+        height: 30%;
+        top: calc(15% + 2.5rem);
+        left: 50%;
+        background-color: black;
+      }
+
+      .drawing__part-6a,
+      .drawing__part-6b {
+        width: 10%;
+        height: 3px;
+        top: calc(15% + 2.5rem + 1.5rem);
+        background-color: black;
+      }
+
+      .drawing__part-6a {
+        left: calc(50% - 10% + 1.5px);
+        transform-origin: right center;
+        transform: rotate(20deg);
+      }
+
+      .drawing__part-6b {
+        left: calc(50% + 1.5px);
+        transform-origin: left center;
+        transform: rotate(-20deg);
+      }
+
+      .drawing__part-7a,
+      .drawing__part-7b {
+        width: 25%;
+        height: 3px;
+        top: calc(45% + 2.5rem - 3px);
+        background-color: black;
+      }
+
+      .drawing__part-7a {
+        left: calc(50% - 25% + 1.5px);
+        transform-origin: right center;
+        transform: rotate(-55deg);
+      }
+
+      .drawing__part-7b {
+        left: calc(50% + 1.5px);
+        transform-origin: left center;
+        transform: rotate(55deg);
+      }
+    </style>
+
+    <style>
+      .modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal__background {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+
+      .modal__main {
+        width: 24rem;
+        z-index: 1;
+        box-shadow: 5px 5px 0 1px rgb(0, 47, 179);
+        border: 3px solid rgb(0, 62, 230);
+        padding: 2rem;
+        background-color: white;
+      }
+
+      .modal__content {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        text-align: center;
+      }
+
+      .modal__content em {
+        color: rgb(0, 62, 230);
+      }
+
+      .modal__actions {
+        margin-top: 2rem;
+        text-align: center;
+      }
+
+      .modal__actions button {
+        margin: 0;
+        padding: 0.5rem 1rem;
+        outline: none;
+        border: none;
+        background-color: rgb(0, 62, 230);
+        color: white;
+        font: inherit;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Bonk moment</h1>
+    </header>
+    <div id="hangman">
+      <div class="drawing" id="drawing">
+        <div class="drawing__container"></div>
+        <div class="drawing__message"></div>
       </div>
-      <div class="resume">
-      
-      </div>
-    </ul>
+      <div id="result"></div>
     </div>
-  </div>
-</div>
+    <div id="board">
+      <div id="chars" class="chars"></div>
+      <div id="keyboard" class="keyboard"></div>
+    </div>
+    <div id="modal" class="modal" style="display: none">
+      <div class="modal__background"></div>
+      <div class="modal__main">
+        <div class="modal__content"></div>
+        <div class="modal__actions">
+          <button onclick="reinitGame()">Play New Game</button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      Developed by Sil
+    </footer>
 
+    <script>
+      let game = null;
+      const MAX_FAULTS = 9;
+      const wordList = [
+        'eewee',
+        'bonk',
+        'honk',
+        'mee6',
+        'jake paul',
+        'fev',
+        'sil'
+       
+      ];
 
+      function reinitGame() {
+        game = initNewGame();
+      }
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/modernizr.custom.js"></script>
-  <script src="js/particles.min.js"></script>
-  <script src="js/tippy.all.min.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
-  <!-- <script type="text/javascript" src="js/text-autotype.js" ></script> -->
-  <script>
-      tippy("[title]", {
-        placement: 'bottom',
-        animation: 'scale',
-        theme:'translucent',
-        //duration: 1000,
-        arrow: true
+      function hideModal() {
+        const modal = document.getElementById('modal');
+        modal.style.display = 'none';
+      }
+
+      function showModal(content) {
+        const modal = document.getElementById('modal');
+        const modalContent = modal.querySelector('.modal__content');
+        modalContent.innerHTML = content;
+        setTimeout(() => (modal.style.display = ''), 300);
+      }
+
+      function gameEndHandler() {
+        const content = game.hasWon()
+          ? `Great, you are a certified bonker!`
+          : `Bonk, the word is <em>${game.getWord()}</em>.`;
+        showModal(content);
+      }
+
+      function initNewGame() {
+        const hangman = new Hangman(getRandomWord(), gameEndHandler);
+        hideModal();
+        drawGame(hangman);
+        return hangman;
+      }
+
+      function getRandomWord() {
+        const index = Math.floor(Math.random() * wordList.length);
+        return wordList[index];
+      }
+
+      function guessLetter(letter) {
+        if (game && !game.isFinished()) {
+          game.pickedLetter(letter);
+          drawGame(game);
+        }
+      }
+
+      function drawHangman(faults) {
+        const parts = [
+          '<div class="drawing__part drawing__part-1"></div>',
+          '<div class="drawing__part drawing__part-2"></div>',
+          '<div class="drawing__part drawing__part-3"></div>',
+          '<div class="drawing__part drawing__part-4"></div>',
+          '<div class="drawing__part drawing__part-5"></div>',
+          `<div class="drawing__part drawing__part-6a"></div>`,
+          `<div class="drawing__part drawing__part-6b"></div>`,
+          `<div class="drawing__part drawing__part-7a"></div>`,
+          `<div class="drawing__part drawing__part-7b"></div>`,
+        ];
+
+        const visibleParts = parts.splice(0, faults);
+        const parent = document.querySelector('#drawing .drawing__container');
+        parent.innerHTML = visibleParts.join('');
+      }
+
+      function drawResult(faults) {
+        const texts = [
+          /* 0 */ "9 + 10 is 21",
+          /* 1 */ "Let's hang out.",
+          /* 2 */ "Don't worry, everything is fine.",
+          /* 3 */ "Don't worry, everything is fine.",
+          /* 4 */ "Idot",
+          /* 5 */ 'Ooh... be careful!',
+          /* 6 */ "That's not good!",
+          /* 7 */ 'OMG!!!',
+          /* 8 */ 'HEEEELP!',
+          /* 9 */ 'R.I.P.',
+        ];
+
+        const container = document.querySelector('#drawing .drawing__message');
+        container.innerText = texts[faults];
+      }
+
+      function drawKeyboard(foundLetters, faultyLetters) {
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+        const keys = letters.map(letter => {
+          const found = foundLetters.includes(letter);
+          const faulty = faultyLetters.includes(letter);
+          return { letter, found, faulty };
+        });
+
+        const parent = document.getElementById('keyboard');
+        parent.innerHTML = '';
+        keys.map(key => {
+          const el = document.createElement('button');
+          el.innerText = key.letter;
+          el.disabled = key.found || key.faulty;
+          el.className = 'keyboard__key';
+          key.found && el.classList.add('keyboard__key--found');
+          key.faulty && el.classList.add('keyboard__key--is-faulty');
+
+          el.onclick = () => {
+            guessLetter(key.letter);
+          };
+
+          parent.appendChild(el);
+        });
+      }
+
+      function drawCharList(chars) {
+        const parent = document.getElementById('chars');
+        parent.innerHTML = '';
+
+        chars.forEach(char => {
+          const charEl = document.createElement('div');
+          charEl.className = `chars__char ${char.isLetter ? 'chars__char--is-letter' : ''}`;
+          charEl.innerText = char.show ? char.value : '';
+          parent.appendChild(charEl);
+        });
+      }
+
+      function drawGame(hangman) {
+        drawResult(hangman.getNumberOfFaults());
+        drawHangman(hangman.getNumberOfFaults());
+        drawCharList(hangman.getCharList());
+        drawKeyboard(hangman.getFoundLetters(), hangman.getFaultyLetters());
+      }
+
+      function listenForInputs(callback) {
+        window.addEventListener('keydown', event => {
+          const pressedOtherKey = event.altKey || event.ctrlKey || event.metaKey; // Shift key is allowed
+          const key = event.key.toUpperCase();
+          const isLetter = key.match(/[A-Z]/);
+          !pressedOtherKey && isLetter && callback(key);
+        });
+      }
+
+      class Hangman {
+        constructor(word, onEndGame) {
+          this.word = word.toUpperCase();
+          this.pickedLetters = [];
+          this.faults = 0;
+          this.onEndGame = onEndGame;
+        }
+
+        getWord() {
+          return this.word;
+        }
+
+        getCharsOfWord() {
+          return this.word.split('');
+        }
+
+        getLettersOfWord() {
+          const chars = this.getCharsOfWord();
+          return chars
+            .filter(char => char.match(/[A-Z]/))
+            .filter((char, index, list) => list.indexOf(char) === index);
+        }
+
+        getNumberOfFaults() {
+          return this.faults;
+        }
+
+        getFaultyLetters() {
+          return this.pickedLetters.filter(letter => {
+            return !this.word.includes(letter);
+          });
+        }
+
+        getFoundLetters() {
+          return this.pickedLetters.filter(letter => {
+            return this.word.includes(letter);
+          });
+        }
+
+        getCharList() {
+          const chars = this.getCharsOfWord();
+          return chars.map(char => {
+            const isLetter = char.match(/[A-z]/);
+            const pickedLetterAlready = this.pickedLetters.includes(char);
+            const show = pickedLetterAlready || !isLetter;
+            return { isLetter, show, value: char };
+          });
+        }
+
+        pickedLetter(letter) {
+          const alreadyPicked = this.pickedLetters.includes(letter);
+          const contains = this.word.includes(letter);
+
+          if (alreadyPicked) {
+            console.log('Uuh, you already picked that letter');
+            return;
+          }
+
+          this.pickedLetters.push(letter);
+
+          if (contains) {
+            console.log('Yeah, you are great!');
+          } else {
+            console.log('Oh no, try it again');
+            this.pickedLetters.push(letter);
+            this.faults += 1;
+          }
+
+          if (this.isFinished()) {
+            this.onEndGame();
+          }
+        }
+
+        hasWon() {
+          const letters = this.getLettersOfWord();
+          return (
+            !this.hasLost() &&
+            letters.every(char => {
+              return this.pickedLetters.includes(char);
+            })
+          );
+        }
+
+        hasLost() {
+          return this.faults >= MAX_FAULTS;
+        }
+
+        isFinished() {
+          return this.hasLost() || this.hasWon();
+        }
+      }
+
+      game = initNewGame();
+      listenForInputs(letter => {
+        guessLetter(letter);
       });
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  
-    ga('create', 'UA-104939378-1', 'auto');
-    ga('send', 'pageview');
-    
-    window.smartlook||(function(d) {
-    var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
-    var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
-    c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
-    })(document);
-    smartlook('init', 'adf3cbf25474339a9cd09528e2eabde9b0a82fb6');
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
