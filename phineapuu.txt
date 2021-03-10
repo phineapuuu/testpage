@@ -1,4 +1,4 @@
-<span id="a">phine@apuu</span>:<span id="b">~</span><span id="c">$</span> cd phineapuuu/<!-- kjsdfhkjdhsfkjdshfkj -->About_Phineapuuu
+<span id="a">phine@apuu</span>:<span id="b">~</span><span id="c">$</span> cd phineapuuu
 <span id="a">phine@apuu</span>:<span id="b">~</span><span id="c">$</span> cat <!-- kjsdfhkjdhsfkjdshfkj -->phineapuu.txt<br/><br/>
 My favorite code quote, "<span id="k">Build fast, Code big</span>". <!-- sjkfhskjf -->
 
