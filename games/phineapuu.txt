@@ -1,4 +1,4 @@
-<span id="a">phine@apuu</span>:<span id="b">~</span><span id="c">$</span> cd phineapuu/games/
+<span id="a">phine@apuu</span>:<span id="b">~</span><span id="c">$</span> cd phineapuu/games
 <span id="a">phine@apuu</span>:<span id="b">~</span><span id="c">$</span> cat phineapuu.txt<br/><br/>
 <span id="a">phine@apuu</span>:<span id="b">~</span><span id="c">$</span><a href="https://phineapuu.ml/"> Home menu</a><br/><br/>
 
@@ -9,7 +9,7 @@
 
 <a href="#"> Fishing</a><p>A Simple game that spawn fishies and let your fishie grow! Game will be available soon! Link included.</p>
 
-<a href="#"> Car Game</a><psimple car racing game, collecting energys on road, speeds up as many energy consumed, slow down if miss energy on road. driving is unlimited</p>
+<a href="#"> Car Game</a><p>simple car racing game, collecting energys on road, speeds up as many energy consumed, slow down if miss energy on road. driving is unlimited</p>
 
 <p>Cheers!</p>
 <span id="a">phine@apuu</span>:<span id="b">~</span><span id="c">$</span> exit
