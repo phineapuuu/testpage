@@ -8,10 +8,8 @@
 </p>
 
 <a href="#"> Fishing</a><p>A Simple game that spawn fishies and let your fishie grow! Game will be available soon! Link included.</p>
-<p>One thing you may notice about me is that I am always coding or solving challenges. I love to develop apps, Discord Bot, web-apps and also like solving competitive coding problems. <br><br><br>Do you want to see my recent games? <a href="https://hangman.phineapuu.ml/"> Here you go</a>.</p><!-- hsdgfhjfkdjhfkjsdhfkjdshfkjsdhfkjsdhkfjhdskjfhksdjhfkdsj -->
-<p> You can visit my other profiles, here: <br> <a href="https://www.facebook.com/phine.apuu/">Facebook</a> <br> <a href="https://github.com/phineapuuu">GitHub</a> <br> <a href="https://discord.gg/zHugPYagze">Discord Server</a> and <br> <a href="https://twitter.com/phineapuu">Twitter</a>.</p>
 
-If you would like to get in touch with me<!-- slightdelayhere-->, feel free to send me an email at <a href="mailto:rickyturtles.dev@gmail.com">rickyturtles.dev@gmail.com</a>.
+<a href="#"> Car Game</a><psimple car racing game, collecting energys on road, speeds up as many energy consumed, slow down if miss energy on road. driving is unlimited</p>
 
 <p>Cheers!</p>
 <span id="a">phine@apuu</span>:<span id="b">~</span><span id="c">$</span> exit
