@@ -1,5 +1,7 @@
 <span id="a">phine@apuu</span>:<span id="b">~</span><span id="c">$</span> cd phineapuuu
 <span id="a">phine@apuu</span>:<span id="b">~</span><span id="c">$</span> cat <!-- kjsdfhkjdhsfkjdshfkj -->phineapuu.txt<br/><br/>
+<span id="a">phine@apuu</span>:<span id="b">~</span><span id="c">$</span><a href="https://phineapuu.ml/games/"> Game List</a><br/><br/>
+
 My favorite code quote, "<span id="k">Build fast, Code big</span>". <!-- sjkfhskjf -->
 
 Hey There! I am Phine appuu.<!-- laglaglaglaglaglaglaglaglaglaglaglag --><p>I am currently learning Python and Java, and currently working on a Discord bot and a Social Media Platform.</p>
