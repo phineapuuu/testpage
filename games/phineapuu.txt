@@ -4,10 +4,10 @@
 
 "<span id="k">Game Lists!</span>". 
 
-Hangman<p>Hangman is a paper and pencil guessing game for two or more players. One player thinks of a word, phrase or sentence and the other tries to guess it by suggesting letters within a certain number of guesses. Wikipedia
+<a href="https://hangman.phineapuu.ml"> Hangman</a><p>Hangman is a paper and pencil guessing game for two or more players. One player thinks of a word, phrase or sentence and the other tries to guess it by suggesting letters within a certain number of guesses. Wikipedia
 </p>
-<p>I love to code, solve interesting mathematics problems, and play roblox, and maybe listening to music.</p> 
-<p> I have worked in fields like Bot Development, Game Development and Web Development until now, and I'm working on other new things. You can learn more about me on my <a href="#"> portfolio</a>!</p>
+
+<a href="#"> Fishing</a><p>A Simple game that spawn fishies and let your fishie grow! Game will be available soon! Link included.</p>
 <p>One thing you may notice about me is that I am always coding or solving challenges. I love to develop apps, Discord Bot, web-apps and also like solving competitive coding problems. <br><br><br>Do you want to see my recent games? <a href="https://hangman.phineapuu.ml/"> Here you go</a>.</p><!-- hsdgfhjfkdjhfkjsdhfkjdshfkjsdhfkjsdhkfjhdskjfhksdjhfkdsj -->
 <p> You can visit my other profiles, here: <br> <a href="https://www.facebook.com/phine.apuu/">Facebook</a> <br> <a href="https://github.com/phineapuuu">GitHub</a> <br> <a href="https://discord.gg/zHugPYagze">Discord Server</a> and <br> <a href="https://twitter.com/phineapuu">Twitter</a>.</p>
 
