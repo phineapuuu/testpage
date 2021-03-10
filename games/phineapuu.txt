@@ -1,4 +1,4 @@
-<span id="a">phine@apuu</span>:<span id="b">~</span><span id="c">$</span> cd phineapuu/games/
+<span id="a">phine@apuu</span>:<span id="b">~</span><span id="c">$</span> cd phineapuu/games
 <span id="a">phine@apuu</span>:<span id="b">~</span><span id="c">$</span> catphineapuu.txt<br/><br/>
 <span id="a">phine@apuu</span>:<span id="b">~</span><span id="c">$</span><a href="https://phineapuu.ml/"> Home menu</a><br/><br/>
 
